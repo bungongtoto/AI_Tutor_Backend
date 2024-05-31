@@ -1,0 +1,1 @@
+20240527	14:26:51	47410dff-c5eb-4585-9215-7eb7ed43ab88	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	POST	/auth/signup	http://localhost:3000
