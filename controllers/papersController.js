@@ -7,7 +7,7 @@ const asyncHandler = require("express-async-handler");
 // @route GET /paper
 // @access Private
 const getAllPapers = asyncHandler(async (req, res) => {
-  const papers = await Course.find().lean();
+  const papers = await Paper.find().lean();
   if (!papers?.length) {
     return res.status(400).json({ message: "No paper found" });
   }

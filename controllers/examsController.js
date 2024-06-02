@@ -18,7 +18,7 @@ const getAllExams = asyncHandler(async (req, res) => {
 // @route POST /exam
 // @access Private
 const createNewExam = asyncHandler(async (req, res) => {
-  const { title, courses } = req.body;
+  const { title } = req.body;
 
   // Confirm Data
   if (!title) {
@@ -36,12 +36,7 @@ const createNewExam = asyncHandler(async (req, res) => {
   }
 
   // create and store new exam
-  let exam;
-  if (courses) {
-    exam = await exam.create({ title });
-  } else {
-    exam = await exam.create({ title, courses });
-  }
+  const  exam = await Exam.create({ title });
 
   if (exam) {
     res.status(201).json({ message: `New exam ${title} created` });
@@ -54,10 +49,10 @@ const createNewExam = asyncHandler(async (req, res) => {
 // @route PATCH /exam
 // @access Private
 const updateExam = asyncHandler(async (req, res) => {
-  const { id, title, courses } = req.body;
+  const { id, title} = req.body;
 
   // Confirm data
-  if (!id || !title || !courses) {
+  if (!id || !title) {
     return res.status(400).json({ message: "All fields are required" });
   }
 
@@ -79,7 +74,6 @@ const updateExam = asyncHandler(async (req, res) => {
   }
 
   exam.title = title;
-  exam.courses = courses;
 
   const updatedexam = await exam.save();
 
@@ -96,11 +90,11 @@ const deleteExam = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "exam ID required" });
   }
 
-  // check for dependent Courses
+  // check for dependent courses
   const course = await Course.findOne({ examId: id }).lean().exec();
 
   if (course) {
-    return res.status(400).json({ message: "Exam has assigned courses" });
+    return res.status(400).json({ message: "Exam has assigned course, please delete all dependent courses and try again" });
   }
   
   const exam = await Exam.findById(id).exec();

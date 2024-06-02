@@ -1,4 +1,4 @@
-const Question = require("../models/question");
+const Question = require("../models/Question");
 const Paper = require("../models/Paper");
 const asyncHandler = require("express-async-handler");
 
@@ -68,14 +68,14 @@ const updateQuestion = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "All fields are required" });
   }
 
-  const question = await question.findById(id).exec();
+  const question = await Question.findById(id).exec();
 
   if (!question) {
     return res.status(400).json({ message: "question not found" });
   }
 
   // check for duplicate
-  const duplicate = await question.findOne({ number })
+  const duplicate = await Question.findOne({ number })
     .collation({ locale: "en", strength: 2 })
     .lean()
     .exec();

@@ -6,17 +6,17 @@ const courseSchema = new mongoose.Schema({
         required: true
     },
     examId: {
-        type: String,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "Exam"
     },
     structure: {
         type: "String",
         required: true
     },
     years:{
-        type: [mongoose.Schema.Types.ObjectId],
-        default: [],
-        ref: "Paper"
+        type: String,
+        required: true
     }
 })
 

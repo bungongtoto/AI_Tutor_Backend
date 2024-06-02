@@ -32,8 +32,8 @@ const createNewCourse = asyncHandler(async (req, res) => {
   const {title , examId ,structure , years} = req.body;
 
   // Confirm Data
-  if (!title || !structure || !examId ) {
-    return res.status(400).json({ message: "title, examId and structure field required" });
+  if (!title || !structure || !examId || !years ) {
+    return res.status(400).json({ message: "all fields required" });
   }
 
   // check for duplicates
@@ -47,13 +47,7 @@ const createNewCourse = asyncHandler(async (req, res) => {
   }
 
   // create and store new course
-  let course
-  if (years){
-    course = await Course.create({ title, examId ,structure, years});
-  } 
-  else {
-    course = await course.create({ title,examId ,structure });
-  }
+  const  course = await Course.create({ title, examId ,structure, years});
   
 
   if (course) {
@@ -74,7 +68,7 @@ const updateCourse = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "All fields are required" });
   }
 
-  const course = await Courseourse.findById(id).exec();
+  const course = await Course.findById(id).exec();
 
   if (!course) {
     return res.status(400).json({ message: "course not found" });
@@ -119,7 +113,6 @@ const deleteCourse = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "Course has assigned papers" });
   }
   
-
   const course = await Course.findById(id).exec();
 
   if (!course) {

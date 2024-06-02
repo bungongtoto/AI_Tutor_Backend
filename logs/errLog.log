@@ -1,1 +1,7 @@
 20240527	14:26:51	47410dff-c5eb-4585-9215-7eb7ed43ab88	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	POST	/auth/signup	http://localhost:3000
+20240602	09:14:35	2381720c-bb4e-4b91-99b0-2f96ce77f523	ReferenceError: Cannot access 'exam' before initialization	POST	/exams	undefined
+20240602	10:30:57	ab583272-ca5e-4c18-9a9e-2391c410ef77	ReferenceError: Courseourse is not defined	PATCH	/courses	undefined
+20240602	16:57:33	6c298d18-40d3-456a-94f4-7ac5ea49707c	TypeError: Cannot read properties of null (reading 'title')	GET	/papers	undefined
+20240602	17:00:32	96234b42-937c-4c7d-9623-b1948f03a14e	TypeError: Cannot read properties of null (reading 'title')	GET	/papers	undefined
+20240602	17:30:27	f821b87b-3bfc-4c58-8142-59378da6e3b9	ReferenceError: Cannot access 'question' before initialization	PATCH	/questions	undefined
+20240602	17:31:43	8d794b41-5492-494c-ab28-9391ccf104bf	TypeError: question.findOne is not a function	PATCH	/questions	undefined
