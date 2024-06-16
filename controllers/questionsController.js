@@ -35,16 +35,6 @@ const createNewQuestion = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "All fields required" });
   }
 
-  // check for duplicates
-  const duplicate = await Question.findOne({ number })
-    .collation({ locale: "en", strength: 2 })
-    .lean()
-    .exec();
-
-  if (duplicate) {
-    return res.status(409).json({ message: "Duplicate question number" });
-  }
-
   // create and store new question
   const question =  await Question.create({ number, paperId, text, answer});
   

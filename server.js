@@ -31,6 +31,7 @@ app.use('/exams', require('./routes/examRoutes'))
 app.use('/courses', require('./routes/courseRoutes'))
 app.use('/papers', require('./routes/paperRoutes'))
 app.use('/questions', require('./routes/questionRoutes'))
+app.use('/enrollments', require('./routes/enrollmentRoutes'))
 
 app.all('*', (req, res) => {
     res.status(404)
