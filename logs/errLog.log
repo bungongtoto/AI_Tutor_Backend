@@ -5,3 +5,27 @@
 20240602	17:00:32	96234b42-937c-4c7d-9623-b1948f03a14e	TypeError: Cannot read properties of null (reading 'title')	GET	/papers	undefined
 20240602	17:30:27	f821b87b-3bfc-4c58-8142-59378da6e3b9	ReferenceError: Cannot access 'question' before initialization	PATCH	/questions	undefined
 20240602	17:31:43	8d794b41-5492-494c-ab28-9391ccf104bf	TypeError: question.findOne is not a function	PATCH	/questions	undefined
+20240616	12:54:55	c33b017f-a7ea-4df2-ac2f-256dee0e2638	MongoServerSelectionError: connection timed out	GET	/exams	http://localhost:3000
+20240616	12:56:25	c4330431-bfbc-45d1-8786-25abfa9cef25	MongoServerSelectionError: connection timed out	GET	/exams	http://localhost:3000
+20240616	12:57:55	ad4708b2-4bb7-4a18-be86-d657e4298ebc	MongoServerSelectionError: connection timed out	GET	/exams	http://localhost:3000
+20240616	13:07:07	f420244c-beef-485f-8f0a-0ca4313a9a27	MongoServerSelectionError: connection <monitor> to 13.244.219.10:27017 timed out	GET	/exams	http://localhost:3000
+20240616	13:08:38	3916ec85-2a40-4199-923d-fe31e9d61d26	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/exams	http://localhost:3000
+20240616	13:16:38	b6bce0a6-7819-44b7-9843-f1ec85e1397e	MongoServerSelectionError: connection <monitor> to 13.245.152.13:27017 timed out	GET	/exams	http://localhost:3000
+20240616	14:13:46	0724f1d4-c69b-4afb-994f-4814692b2aa4	MongoServerSelectionError: connection timed out	GET	/exams	http://localhost:3000
+20240616	14:15:16	c0557fdb-fe0d-4ed0-9b7b-7c77605495b5	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/exams	http://localhost:3000
+20240616	14:40:07	155664c2-e0ec-4469-a651-da70dc581f80	MongoPoolClearedError: Connection pool for ac-0apkje2-shard-00-01.wpn0mry.mongodb.net:27017 was cleared because another operation failed with: "connection <monitor> to 13.244.156.101:27017 timed out"	GET	/courses	http://localhost:3000
+20240616	14:43:44	17634c74-51ed-4b91-913d-5f91ba891a71	MongoServerSelectionError: connection <monitor> to 13.244.219.10:27017 timed out	GET	/courses	http://localhost:3000
+20240616	14:45:15	a7d94e70-faa8-4720-af0e-62433e654870	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/courses	http://localhost:3000
+20240616	15:07:01	8228c05a-4a20-4d21-91a3-0633b09283a7	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-01.wpn0mry.mongodb.net	GET	/exams	http://localhost:3000
+20240616	15:13:06	3f95321c-444a-4f90-9245-6e613cc30469	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-01.wpn0mry.mongodb.net	GET	/courses	http://localhost:3000
+20240616	15:14:37	807afc53-2adc-492a-8b40-68f8d03d2deb	MongoServerSelectionError: connection timed out	GET	/courses	http://localhost:3000
+20240616	19:56:46	3fd595d3-cd52-4060-b373-538d8bb5e9f4	MongoServerSelectionError: connection <monitor> to 13.244.219.10:27017 timed out	GET	/papers	http://localhost:3000
+20240616	19:58:17	822ce4ff-f728-42f9-baf7-43edc2f2a493	MongoServerSelectionError: connection timed out	GET	/papers	http://localhost:3000
+20240616	19:59:47	85187cd1-8917-41e7-b5b1-af4d719f351b	MongoServerSelectionError: connection timed out	GET	/papers	http://localhost:3000
+20240616	20:01:17	e8cd5e99-3b34-4945-a5c8-f5e5ddda8c06	MongoServerSelectionError: connection timed out	GET	/papers	http://localhost:3000
+20240616	20:02:47	aaf9b9db-9686-4ff5-9187-df7c189dd6af	MongoServerSelectionError: connection timed out	GET	/papers	http://localhost:3000
+20240616	20:04:17	95231fa5-f9fe-49df-a50d-01366cd20141	MongoServerSelectionError: connection timed out	GET	/papers	http://localhost:3000
+20240616	20:05:47	be06c27a-1db7-4a6c-b1f8-5e168c1d9d83	MongoServerSelectionError: connection timed out	GET	/papers	http://localhost:3000
+20240616	20:07:18	36ddee2e-ff06-4d28-8655-1b06255888eb	MongoServerSelectionError: connection timed out	GET	/papers	http://localhost:3000
+20240616	20:08:48	319ed831-6ece-423e-bfb8-6d80add861af	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/papers	http://localhost:3000
+20240616	20:10:18	35f7e9e3-ba2d-475c-a9d9-65f9c92268fd	MongoServerSelectionError: connection timed out	GET	/papers	http://localhost:3000

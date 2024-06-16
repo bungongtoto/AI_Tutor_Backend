@@ -1,4 +1,5 @@
 const Course = require("../models/Course");
+const Enrollment = require("../models/Enrollment");
 const Exam = require("../models/Exam");
 const Paper = require("../models/Paper");
 const asyncHandler = require("express-async-handler");
@@ -111,6 +112,13 @@ const deleteCourse = asyncHandler(async (req, res) => {
 
   if (paper) {
     return res.status(400).json({ message: "Course has assigned papers" });
+  }
+
+  // check for dependent Enrollments
+  const enrollment = await Enrollment.findOne({ courseId: id }).lean().exec();
+
+  if (enrollment) {
+    return res.status(400).json({ message: "Course has assigned enrollments" });
   }
   
   const course = await Course.findById(id).exec();

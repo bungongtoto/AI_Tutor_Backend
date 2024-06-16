@@ -64,17 +64,6 @@ const updateQuestion = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "question not found" });
   }
 
-  // check for duplicate
-  const duplicate = await Question.findOne({ number })
-    .collation({ locale: "en", strength: 2 })
-    .lean()
-    .exec();
-
-  // Allow updates to original section
-  if (duplicate && duplicate?._id.toString() !== id) {
-    return res.status(409).json({ message: "Duplicate question" });
-  }
-
   question.number = number;
   question.paperId = paperId;
   question.text = text;
