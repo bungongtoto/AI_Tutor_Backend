@@ -149,7 +149,7 @@ const signUp = asyncHandler(async (req, res) => {
 // @route POST /auth
 // @access Public
 const resetPassword = asyncHandler(async (req, res) => {
-  const { email, password, roles } = req.body;
+  const { email, password } = req.body;
 
   // Confirm Data
   if (!email || !password) {
@@ -167,23 +167,26 @@ const resetPassword = asyncHandler(async (req, res) => {
     .lean()
     .exec();
 
-  if (duplicate) {
-    return res.status(409).json({ message: "Email in Use" });
+  if (!duplicate) {
+    return res.status(404).json({ message: "No Such User" });
   }
+
+  const user = await User.findById(duplicate._id).exec();
+
+  if (!user) {
+    return res.status(404).json({ message: "user not found" });
+  }
+
 
   // Hash password
   const hashedPwd = await bcrypt.hash(password, 10); // salt rounds
 
-  const userObject =
-    !Array.isArray(roles) || !roles.length
-      ? { email, password: hashedPwd }
-      : { email, password: hashedPwd, roles };
+  user.password = hashedPwd;
 
-  // create and store new user
-  const user = await User.create(userObject);
-
-  if (user) {
-    res.status(201).json({ message: `New user ${email} created` });
+  const updatedUser = await user.save();
+  
+  if (updatedUser) {
+    res.status(201).json({ message: `change password for user:  ${email} created` });
   } else {
     res.status(400).json({ message: "Invalid user data received" });
   }
@@ -193,5 +196,6 @@ module.exports = {
   login,
   refresh,
   logout,
-  signUp
+  signUp, 
+  resetPassword
 };

@@ -28,16 +28,13 @@ const createNewEnrollment = asyncHandler(async (req, res) => {
   }
 
   // check for duplicates
-  const duplicate1 = await Enrollment.findOne({ userId })
+  const duplicate1 = await Enrollment.findOne({ userId , courseId})
     .collation({ locale: "en", strength: 2 })
     .lean()
     .exec();
-  const duplicate2 = await Enrollment.findOne({ courseId })
-    .collation({ locale: "en", strength: 2 })
-    .lean()
-    .exec();
+  
 
-  if (duplicate1 && duplicate2) {
+  if (duplicate1) {
     return res.status(409).json({ message: "Already Enrolled to the course" });
   }
 

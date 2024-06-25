@@ -7,6 +7,8 @@ router.route("/").post(loginLimiter, authController.login);
 
 router.route("/signup").post(authController.signUp);
 
+router.route("/resetpassword").post(authController.resetPassword);
+
 router.route("/refresh").get(authController.refresh);
 
 router.route("/logout").post(authController.logout);

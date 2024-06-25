@@ -29,3 +29,17 @@
 20240616	20:07:18	36ddee2e-ff06-4d28-8655-1b06255888eb	MongoServerSelectionError: connection timed out	GET	/papers	http://localhost:3000
 20240616	20:08:48	319ed831-6ece-423e-bfb8-6d80add861af	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/papers	http://localhost:3000
 20240616	20:10:18	35f7e9e3-ba2d-475c-a9d9-65f9c92268fd	MongoServerSelectionError: connection timed out	GET	/papers	http://localhost:3000
+20240624	07:14:53	cedf8e28-1db8-481a-a4e3-42c75c5374df	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/questions	http://localhost:3000
+20240624	07:39:52	0a5ab749-cbc8-4f68-b1a4-f2f2053af284	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/questions	http://localhost:3000
+20240624	07:41:22	14743267-3c33-45da-890d-2fd9a1c2af79	MongoServerSelectionError: connection timed out	GET	/questions	http://localhost:3000
+20240625	21:01:52	8e1ae39b-633f-417d-a3cd-7d7771b4f3f5	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/courses	http://localhost:3000
+20240625	21:01:52	15ca9488-6c2c-4e43-bea1-2577283b064e	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/questions	http://localhost:3000
+20240625	21:01:52	3b32d320-f3bc-4ecc-ac2c-7080f2562264	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/papers	http://localhost:3000
+20240625	21:01:52	6a4bbf68-0be7-4137-9036-e3ea0b837571	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/users	http://localhost:3000
+20240625	21:01:52	799e5f13-06b8-40ee-a447-d876e001525e	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/exams	http://localhost:3000
+20240625	21:01:52	dc58db3d-0be5-43b1-bb7e-a44593b1143e	MongoServerSelectionError: getaddrinfo ENOTFOUND ac-0apkje2-shard-00-02.wpn0mry.mongodb.net	GET	/enrollments	http://localhost:3000
+20240625	21:56:21	ef04e7e3-ce1f-44fc-a5db-81866a34fb52	Error: read ECONNRESET	GET	/exams	http://localhost:3000
+20240625	21:56:21	21c584ca-9902-4f6b-ae34-379cb174a77d	Error: read ECONNRESET	GET	/users	http://localhost:3000
+20240625	21:56:21	970936ea-2bfd-4dd3-97b9-5bc51c03da56	Error: read ECONNRESET	GET	/enrollments	http://localhost:3000
+20240625	21:56:21	c644a028-4ef5-49f7-a33c-0ed3c53c8128	Error: read ECONNRESET	GET	/questions	http://localhost:3000
+20240625	21:56:21	5cf25705-b45d-4f01-b194-efb7bf82a802	Error: read ECONNRESET	GET	/courses	http://localhost:3000
