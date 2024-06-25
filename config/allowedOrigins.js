@@ -1,6 +1,5 @@
 const allowedOrigins = [
-    'http://localhost:3000',
-    'http://localhost:9000',
+    'https://ai-tuto.onrender.com'
 ]
 
 module.exports = allowedOrigins
